@@ -41,12 +41,12 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('name defined and it is not empty',function(){
+        it('name defined and it is not empty',function(){
             for(let feedName of allFeeds){
                 expect(feedName.name).toBeDefined();
                 expect(feedName.name.length).not.toBe(0);
             }
-         });
+        });
     });
 
 
@@ -61,7 +61,7 @@ $(function() {
         it('menu is hidden by default',function(){
             let feedBody = document.querySelector('body');
             expect(feedBody.classList.contains('menu-hidden')).toBe(true);
-         });
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -75,7 +75,7 @@ $(function() {
             expect(feedBody.classList.contains('menu-hidden')).toBe(false);
             menuLink.click();
             expect(feedBody.classList.contains('menu-hidden')).toBe(true);
-          })
+        })
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -105,4 +105,22 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+    describe('New Feed Selection',function(){
+        let firstURL, secondURL;
+
+        beforeEach(function(done){
+            let baseEntry = document.querySelector('.entry-link');
+            firstURL = baseEntry.getAttribute("href");
+            loadFeed(1,done);
+        });
+
+        it('a new feed is loaded by the loadFeed function',function(done){
+            let baseEntry = document.querySelector('.entry-link');
+            secondURL = baseEntry.getAttribute("href");
+            expect(secondURL).not.toBe(firstURL);
+            done();
+        });
+
+    });
+
 }());
