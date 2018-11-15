@@ -26,7 +26,7 @@ class Enemy {
         if (player.x < this.x + 80 && player.x + 80 > this.x &&
             player.y < this.y + 60 && player.y + 60 > this.y) {
             alert('Uh-Oh! You lost!');
-            //player.resetPlayerPosition();
+            player.resetPlayerPosition();
         }
     }
     // Draw the enemy on the screen, required method for game
@@ -37,11 +37,63 @@ class Enemy {
 }
 
 
-
-
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+class Player {
+    constructor() {
+        this.x = 202;
+        this.y = 404;
+        this.sprite = 'images/char-pink-girl.png';
+    }
+
+    update(dt) {
+
+    }
+
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
+    handleInput(keyCode) {
+
+        switch(keyCode) {
+            case 'left':
+            if (this.x > 0) {
+                this.x -= 102;
+            }
+            break;
+            case 'right':
+            if (this.x < 404) {
+                this.x += 102;
+            }
+            break;
+            case 'up':
+            if (this.y > 0) {
+                this.y -= 83;
+            }
+            break;
+            case 'down':
+            if (this.y < 404) {
+                this.y += 83;
+            }
+            break;
+        }
+        if (this.y < 0) {
+            setTimeout(function() {
+                alert('Hey')
+                player.resetPlayerPosition()
+            }, 600);
+        }
+    }
+
+    resetPlayerPosition()
+    {
+        player.x = 202;
+        player.y = 404;
+        this.render();
+    }
+}
 
 
 // Now instantiate your objects.
