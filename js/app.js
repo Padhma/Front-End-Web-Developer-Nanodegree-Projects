@@ -1,7 +1,6 @@
 // Enemies our player must avoid
 class Enemy {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+    // Variables applied to each of our instances go here
     constructor(x,y,speed) {
         this.x = x;
         this.y = y;
@@ -51,10 +50,12 @@ class Player {
 
     }
 
+    // Draw the player on the screen, required method for game
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
+    // Update the player's position, based on the key pressed
     handleInput(keyCode) {
 
         switch(keyCode) {
@@ -79,14 +80,16 @@ class Player {
             }
             break;
         }
+        //display an alert saying that the player won on reaching the water
         if (this.y < 0) {
             setTimeout(function() {
-                alert('Hey')
+                alert('congratulations!!! You won!')
                 player.resetPlayerPosition()
             }, 600);
         }
     }
 
+    //reset the player position
     resetPlayerPosition()
     {
         player.x = 202;
