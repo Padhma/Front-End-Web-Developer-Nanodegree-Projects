@@ -31,8 +31,11 @@ $(function() {
          * and that the URL is not empty.
          */
         it('URL defined for each feed and URL is not empty',function(){
+            //loop through each feed
             for(let feedURL of allFeeds) {
+                //checks whether a URL is defined
                 expect(feedURL.url).toBeDefined();
+                //checks if the URL is not empty
                 expect(feedURL.url.length).not.toBe(0);
             }
         });
@@ -42,8 +45,11 @@ $(function() {
          * and that the name is not empty.
          */
         it('name defined and it is not empty',function(){
+            //loop through each feed
             for(let feedName of allFeeds){
+                //checks for a name
                 expect(feedName.name).toBeDefined();
+                //checks if the name is not empty
                 expect(feedName.name.length).not.toBe(0);
             }
         });
@@ -58,6 +64,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        //checks if the menu is hidden
         it('menu is hidden by default',function(){
             let feedBody = document.querySelector('body');
             expect(feedBody.classList.contains('menu-hidden')).toBe(true);
@@ -71,6 +78,7 @@ $(function() {
         it('menu changes when clicked',function(){
             let feedBody = document.querySelector('body');
             let menuLink = document.querySelector('.menu-icon-link');
+            //checks whether the menu toggles on each click
             menuLink.click();
             expect(feedBody.classList.contains('menu-hidden')).toBe(false);
             menuLink.click();
@@ -89,12 +97,14 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        //calls the loadFeed function
         beforeEach(function(done){
             loadFeed(0,done);
         });
 
         it('at least one .entry element within .feed container',function(done){
             let entry = document.querySelectorAll('.entry');
+            //checks if there is at least one entry
             expect(entry.length).toBeGreaterThan(0);
             done();
         });
@@ -110,13 +120,16 @@ $(function() {
 
         beforeEach(function(done){
             let baseEntry = document.querySelector('.entry-link');
+            //gets the previous URL content
             firstURL = baseEntry.getAttribute("href");
             loadFeed(1,done);
         });
 
         it('a new feed is loaded by the loadFeed function',function(done){
             let baseEntry = document.querySelector('.entry-link');
+            //gets the next URL content
             secondURL = baseEntry.getAttribute("href");
+            //expects the first and second URL content to be not same
             expect(secondURL).not.toBe(firstURL);
             done();
         });
