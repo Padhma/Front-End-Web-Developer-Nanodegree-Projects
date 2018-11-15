@@ -99,6 +99,11 @@ class Player {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+let player = new Player;
+let enemy1 = new Enemy(302, 140, 95),
+    enemy2 = new Enemy(383, 230, 150),
+    enemy3 = new Enemy(101, 60, 100);
+let allEnemies = [enemy1,enemy2,enemy3];
 
 
 
