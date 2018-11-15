@@ -5,7 +5,7 @@ In this project a web-based application has been given that contains reads RSS f
 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
 
-## How will I did this project?
+## How I did this project?
 
 For a given web-based application, tests have been written based on Requirements using the JavaScript testing framework Jasmine.
 
