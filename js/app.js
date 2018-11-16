@@ -1,9 +1,19 @@
-// Enemies our player must avoid
-class Enemy {
-    // Variables applied to each of our instances go here
-    constructor(x,y,speed) {
+//superclass containing similar characteristics
+class Character {
+    constructor(x,y){
         this.x = x;
         this.y = y;
+    }
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
+
+// Enemies our player must avoid
+class Enemy extends Character {
+    // Variables applied to each of our instances go here
+    constructor(x,y,speed) {
+        super(x,y);
         this.speed = speed;
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
@@ -23,14 +33,14 @@ class Enemy {
         }
 
         if (player.x < this.x + 80 && player.x + 80 > this.x &&
-            player.y < this.y + 60 && player.y + 60 > this.y) {
+            player.y < this.y + 55 && player.y + 55 > this.y) {
             alert('Uh-Oh! You lost!');
             player.resetPlayerPosition();
         }
     }
     // Draw the enemy on the screen, required method for game
-    render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    render(){
+        super.render();
     }
 
 }
@@ -39,54 +49,60 @@ class Enemy {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-class Player {
-    constructor() {
+class Player extends Character {
+    constructor(x,y) {
+        super(x,y);
         this.x = 202;
         this.y = 404;
         this.sprite = 'images/char-pink-girl.png';
+        this.tileWidth = 101;
+        this.tileHeight = 83;
+        this.topEnd = 404 - 83*5;
+        this.bottomEnd = 404;
+        this.leftEnd = 0;
+        this.rightEnd = 404;
+        this.keys = 0;
     }
 
-    update(dt) {
+    update() {
+         if(this.y === this.topEnd){
+            alert('Congratulations! You won!!!');
+            this.resetPlayerPosition();
+        }
 
-    }
-
-    // Draw the player on the screen, required method for game
-    render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    }
-
-    // Update the player's position, based on the key pressed
-    handleInput(keyCode) {
-
-        switch(keyCode) {
+        switch(this.keys) {
             case 'left':
-            if (this.x > 0) {
-                this.x -= 102;
+            if (this.x != this.leftEnd) {
+                this.x -= this.tileWidth;
             }
             break;
             case 'right':
-            if (this.x < 404) {
-                this.x += 102;
+            if (this.x != this.rightEnd) {
+                this.x += this.tileWidth;
             }
             break;
             case 'up':
-            if (this.y > 0) {
-                this.y -= 83;
+            if (this.y != this.topEnd) {
+                this.y -= this.tileHeight;
             }
             break;
             case 'down':
-            if (this.y < 404) {
-                this.y += 83;
+            if (this.y != this.bottomEnd) {
+                this.y += this.tileHeight;
             }
             break;
         }
-        //display an alert saying that the player won on reaching the water
-        if (this.y < 0) {
-            setTimeout(function() {
-                alert('congratulations!!! You won!')
-                player.resetPlayerPosition()
-            }, 600);
-        }
+        this.keys = 0;
+    }
+
+    // Draw the player on the screen, required method for game
+    render(){
+        super.render();
+    }
+
+    // Update the player's position, based on the key pressed
+    handleInput(keyPress) {
+        this.keys = keyPress;
     }
 
     //reset the player position
