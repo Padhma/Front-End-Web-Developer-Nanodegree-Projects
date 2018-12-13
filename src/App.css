@@ -1,32 +1,78 @@
+body {
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+}
+
+.nav {
+  background-color: #14213d;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.venue-item {
+  padding: 5px;
+  margin-bottom: 5px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.transition {
+  -webkit-transition: transition 0.3s;
+  -moz-transition: transition 0.3s;
+  -o-transition: transition 0.3s;
+  -ms-transition: transition 0.3s;
+  transition: 0.3s;
+}
+
+.infoimage {
+  display: block;
+  margin: auto;
+}
+
+.info_box {
+  width: 300px;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#map {
+  width: 100%;
+  height: calc(100vh - 60px);
+}
+
+@media (max-width: 475px) {
+  #head-text {font-size: 1rem; padding: 0px 10px;}
+  .menu-text {padding: 0px 10px;}
 }
