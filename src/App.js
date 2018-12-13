@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { GoogleApiWrapper } from 'google-maps-react';
-import * as utils from './utilities'
-import ListDrawer from './SearchBar'
-import NoMapDisplay from './ErrorHandler'
+import * as utils from './utilities';
+import ListDrawer from './SearchBar';
+import NoMapDisplay from './ErrorHandler';
 import 'font-awesome/css/font-awesome.min.css';
 
 class App extends Component {
