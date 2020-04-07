@@ -22,3 +22,5 @@ Make your moves faster to get a better rating.
 This project uses
 * vanilla JS
 * Bootstrap
+
+[Run the Application here](https://padhma.github.io/Memory_Game/)
