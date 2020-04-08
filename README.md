@@ -40,4 +40,4 @@ Arcade Game Clone is a project which is based on time management.
 * Avoid collision with the moving objects.
 * Reach the water to win the game.
 
-
+[Run the application here](https://padhma.github.io/Classic-Arcade-Game-Clone/)
