@@ -24,3 +24,20 @@ This project uses
 * Bootstrap
 
 [Run the Application here](https://padhma.github.io/Memory_Game/)
+
+## Part 3 - Explore JS - Objects, Tools, Testing
+
+### Project 3 - Classic Arcade Game Clone
+#### Description:
+Arcade Game Clone is a project which is based on time management.
+
+## How to run the application?
+* Open the index.html file in your browser.
+* On loading, the game starts.
+
+## How to Play?
+* Use the keyboard to move the player up, down, right or left.
+* Avoid collision with the moving objects.
+* Reach the water to win the game.
+
+
