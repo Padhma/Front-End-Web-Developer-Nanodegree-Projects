@@ -31,11 +31,11 @@ This project uses
 #### Description:
 Arcade Game Clone is a project which is based on time management.
 
-## How to run the application?
+#### How to run the application?
 * Open the index.html file in your browser.
 * On loading, the game starts.
 
-## How to Play?
+#### How to Play?
 * Use the keyboard to move the player up, down, right or left.
 * Avoid collision with the moving objects.
 * Reach the water to win the game.
@@ -46,10 +46,10 @@ Arcade Game Clone is a project which is based on time management.
 #### Description:
 In this project a web-based application has been given that contains reads RSS feeds.
 
-## Why this Project?
+#### Why this Project?
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
 
-## How I did this project?
+#### How I did this project?
 For a given web-based application, tests have been written based on Requirements using the JavaScript testing framework Jasmine.
 * A test to check whether allFeeds contain URL and it is not empty.
 * A test to check whether allFeeds contain a name and it is not empty.
@@ -59,7 +59,7 @@ For a given web-based application, tests have been written based on Requirements
 * It checks whether the .feed container has at least one entry.
 * A new test suite called "New Feed Selection" which checks whether the content of the feed changes each time.
 
-## How to run this project?
+#### How to run this project?
 * Open the index.html file in your browser.
 * Once all the tests are passed it appears at the bottom of the screen.
 * The js/app.js file contains the necessary functions for the application.
