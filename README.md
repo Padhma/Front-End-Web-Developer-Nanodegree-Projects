@@ -128,3 +128,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Google Maps API
 * FourSquare API
 
+![Certificate](https://github.com/Padhma/Front-End-Web-Developer-Nanodegree-Projects/blob/master/images/certificate.jpg)
